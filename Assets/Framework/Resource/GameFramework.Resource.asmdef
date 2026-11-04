@@ -1,0 +1,17 @@
+{
+    "name": "GameFramework.Resource",
+    "rootNamespace": "GameFramework.Resource",
+    "references": [
+        "GameFramework.Core",
+        "YooAsset"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

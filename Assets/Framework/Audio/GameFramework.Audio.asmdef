@@ -1,0 +1,17 @@
+{
+    "name": "GameFramework.Audio",
+    "rootNamespace": "GameFramework.Audio",
+    "references": [
+        "GameFramework.Core",
+        "GameFramework.Resource"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

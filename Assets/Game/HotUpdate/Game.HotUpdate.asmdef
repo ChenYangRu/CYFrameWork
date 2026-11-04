@@ -1,0 +1,22 @@
+{
+    "name": "Game.HotUpdate",
+    "rootNamespace": "Game.HotUpdate",
+    "references": [
+        "GameFramework.Core",
+        "GameFramework.Network",
+        "GameFramework.Resource",
+        "GameFramework.UI",
+        "GameFramework.Audio",
+        "GameFramework.Runtime",
+        "YooAsset"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

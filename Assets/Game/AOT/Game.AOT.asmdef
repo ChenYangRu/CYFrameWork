@@ -1,0 +1,21 @@
+{
+    "name": "Game.AOT",
+    "rootNamespace": "Game.AOT",
+    "references": [
+        "GameFramework.Core",
+        "GameFramework.Network",
+        "GameFramework.Resource",
+        "GameFramework.UI",
+        "GameFramework.Runtime",
+        "YooAsset"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

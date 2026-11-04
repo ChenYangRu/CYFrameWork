@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
+  m_Name: BundleCollectorSetting
+  m_EditorClassIdentifier: 
+  ShowPackageView: 1
+  ShowEditorAlias: 0
+  UniqueBundleName: 0
+  Packages:
+  - PackageName: GamePackage
+    PackageDesc: 
+    EnableAddressable: 0
+    SupportExtensionless: 1
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: DocIgnoreRule
+    Groups:
+    - GroupName: Builtin
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/UI/Common
+        CollectorGUID: e27d3ebd9812dba4fa1749c2707cd041
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: builtin
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Config
+        CollectorGUID: 47370cc17ec2b8e41bbbd8f9ecbc8f76
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: builtin
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Text
+        CollectorGUID: c509578b08f7610409efe740842617cf
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: builtin
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Shader
+        CollectorGUID: 4b0edbb271731484684ecef701f32597
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: builtin
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Art/Icon
+        CollectorGUID: eafa3773b71372347b028dbfb69a976a
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: builtin
+        UserData: 
+    - GroupName: UI
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/UI/Login
+        CollectorGUID: 6ddf61fa979e6a2428e20204928e61c3
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/UI/Lobby
+        CollectorGUID: 1f9994a6f5526f54d9e78c0069b7682c
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/UI/Battle
+        CollectorGUID: 104b833aded99bd4fa9e86e3d456e0b3
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/UI/Shop
+        CollectorGUID: b51f24b40f156fb4fa60d1c4e1bf44d2
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+    - GroupName: Art
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/Art/Character
+        CollectorGUID: d8807c28e2c9a0248b7d6c6ec1c0b3f5
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Art/Prop
+        CollectorGUID: 157e2dee68ae72942a4d49907d7babfa
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Art/Effect
+        CollectorGUID: 63dd3b4f1e36d974391ac8023a9b00da
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Art/Scene
+        CollectorGUID: 1141c2414c187fc4c8cccf58d3d28368
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+    - GroupName: Audio
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/Audio/Bgm
+        CollectorGUID: cc279ba3901f77f4fabe6ccc9f9ca15f
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Audio/Sfx
+        CollectorGUID: cff63538004cb3b4daaef46c4eba219b
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+      - CollectPath: Assets/BundleAssets/Audio/Voice
+        CollectorGUID: b2a4478c86cc36c41ba3bbd380eff236
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+    - GroupName: Video
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/Video
+        CollectorGUID: e065bbd396835c9429ad289d97418bbb
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 
+    - GroupName: HotUpdate
+      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/BundleAssets/HotUpdate
+        CollectorGUID: 8e5c7887c8ec86445a7288f058b65a11
+        CollectorType: 0
+        AddressRuleName: AddressByPathInBundleAssets
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: hotfix
+        UserData: 

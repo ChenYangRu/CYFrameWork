@@ -1,0 +1,25 @@
+{
+    "name": "GameFramework.Editor",
+    "rootNamespace": "GameFramework.EditorTools",
+    "references": [
+        "GameFramework.Core",
+        "GameFramework.Network",
+        "GameFramework.Resource",
+        "GameFramework.UI",
+        "GameFramework.Runtime",
+        "YooAsset",
+        "YooAsset.Editor",
+        "HybridCLR.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

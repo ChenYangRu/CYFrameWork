@@ -1,0 +1,17 @@
+{
+  "name": "unity-mcp-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unity MCP 网关：stdio MCP Server，转发到 Unity 编辑器内的本地桥接服务",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

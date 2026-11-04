@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edac8cf7b5a063849b735e4a5470f603, type: 3}
+  m_Name: McpProjectConfig
+  m_EditorClassIdentifier: 
+  projectId: gameframework
+  displayName: GameFramework
+  serverName: gameframework-unity
+  toolPrefix: gameframework
+  resourceScheme: gameframework
+  authHeaderName: X-Gameframework-Token
+  port: 7893
+  maxPortProbe: 20
+  requestTimeoutMs: 15000
+  autoStart: 1
+  allowDangerousTools: 0
+  sessionDirName: McpGameframework
+  gatewayScriptRelative: Assets/Editor/Mcp/Gateway~/index.js

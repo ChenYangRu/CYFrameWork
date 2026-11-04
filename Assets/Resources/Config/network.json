@@ -1,0 +1,11 @@
+{
+    "host": "127.0.0.1",
+    "port": 9000,
+    "connectTimeout": 8,
+    "heartbeatInterval": 10,
+    "heartbeatTimeout": 30,
+    "autoReconnect": true,
+    "maxReconnectTimes": 6,
+    "reconnectBaseDelay": 1,
+    "requestTimeout": 10
+}

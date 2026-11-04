@@ -1,0 +1,63 @@
+# ---------------- Unity ----------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# 自动生成的工程文件
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.idea/
+.vscode/
+*.DotSettings.user
+
+# 构建产物
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+
+# ---------------- HybridCLR ----------------
+HybridCLRData/
+HybridCLRData.meta
+*.dll.mdb
+
+# 热更 DLL 由工具生成，是否入库按需选择（默认不忽略，便于本地验证）
+# Assets/BundleAssets/HotUpdate/*.bytes
+
+# ---------------- YooAsset / CDN ----------------
+CDN/
+Bundles/
+*.bundle
+
+# ---------------- MCP 网关依赖 ----------------
+Assets/Editor/Mcp/Gateway~/node_modules/
+Assets/Editor/Mcp/Gateway~/package-lock.json
+
+# MCP 运行时/生成物（每台机器自己生成，不进库）
+Assets/Editor/Mcp/MCP_*_接入说明.md
+Assets/Editor/Mcp/mcp-client-config.json
+
+# ---------------- 编辑器临时 ----------------
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

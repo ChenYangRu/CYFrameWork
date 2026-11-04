@@ -1,0 +1,22 @@
+{
+    "name": "GameFramework.Runtime",
+    "rootNamespace": "GameFramework.Runtime",
+    "references": [
+        "GameFramework.Core",
+        "GameFramework.Network",
+        "GameFramework.Resource",
+        "GameFramework.UI",
+        "GameFramework.Audio",
+        "YooAsset",
+        "HybridCLR.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

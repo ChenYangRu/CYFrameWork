@@ -1,0 +1,12 @@
+{
+    "packageName": "GamePackage",
+    "playMode": 0,
+    "hostServer": "",
+    "fallbackHostServer": "",
+    "appVersion": "1.0.0",
+    "resVersion": "",
+    "downloadMaxConcurrency": 4,
+    "downloadRetryCount": 3,
+    "clearUnusedCache": true,
+    "requestTimeout": 60
+}
