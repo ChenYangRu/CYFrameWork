@@ -74,8 +74,6 @@ namespace GameFramework.EditorTools
             // 视频：点播，永不预载
             new Spec("Video",    Root + "/Video",           HotfixTag),
 
-            // 热更程序集：启动必下，否则热更不生效
-            new Spec("HotUpdate", Root + "/HotUpdate",      HotfixTag),
         };
 
         [MenuItem("框架/资源/初始化 YooAsset 收集器（首次必点）", false, 10)]

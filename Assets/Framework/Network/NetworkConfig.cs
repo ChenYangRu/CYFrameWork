@@ -3,6 +3,17 @@ using System;
 namespace GameFramework.Network
 {
     /// <summary>
+    /// 传输方式。
+    /// · Tcp：传统长连接（原生包用；WebGL/小游戏**不可用**，没有 socket）
+    /// · WebSocket：浏览器与小游戏唯一可行方案，也能穿 CDN / 反代
+    /// </summary>
+    public enum TransportType
+    {
+        Tcp = 0,
+        WebSocket = 1,
+    }
+
+    /// <summary>
     /// 网络配置。来源：Resources/Config/network.json（改地址不用改代码）。
     /// ★ JsonUtility 会静默忽略 JSON 里未声明的字段——加字段必须同步加这里的 public 字段。
     /// </summary>
@@ -23,6 +34,17 @@ namespace GameFramework.Network
         public float reconnectBaseDelay = 1f;
         /// <summary>请求超时（秒）</summary>
         public float requestTimeout = 10f;
+
+        // ---------------- 传输方式 ----------------
+
+        /// <summary>传输方式：0=Tcp，1=WebSocket（小游戏/WebGL 必须用 1）</summary>
+        public TransportType transport = TransportType.WebSocket;
+        /// <summary>是否用 wss（https 页面 / 小游戏正式环境必须 true，否则被当混合内容拦掉）</summary>
+        public bool webSocketSecure = false;
+        /// <summary>握手路径，默认 "/"；网关挂在 /ws 就填 "/ws"</summary>
+        public string webSocketPath = "/";
+        /// <summary>整条地址（如 wss://gw.example.com/ws）；非空时忽略 host/port</summary>
+        public string webSocketUrl = "";
 
         public static NetworkConfig Load()
         {

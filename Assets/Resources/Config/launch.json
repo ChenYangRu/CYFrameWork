@@ -1,9 +1,3 @@
 {
-    "hotUpdateAssemblies": ["Game.HotUpdate"],
-    "aotMetadataAssemblies": ["mscorlib", "System", "System.Core"],
-    "hotUpdateLocationRoot": "HotUpdate",
-    "entryType": "Game.HotUpdate.GameEntry",
-    "entryMethod": "Start",
-    "aotMetadataResourceRoot": "AOTMetadata",
-    "skipMetadataInEditor": true
+    "gameMode": 0
 }

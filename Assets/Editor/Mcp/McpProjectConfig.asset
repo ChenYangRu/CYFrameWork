@@ -18,7 +18,7 @@ MonoBehaviour:
   toolPrefix: gameframework
   resourceScheme: gameframework
   authHeaderName: X-Gameframework-Token
-  port: 7893
+  port: 7890
   maxPortProbe: 20
   requestTimeoutMs: 15000
   autoStart: 1

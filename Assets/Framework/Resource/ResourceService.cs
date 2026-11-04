@@ -470,7 +470,7 @@ namespace GameFramework.Resource
             if (onLoaded != null) onLoaded(handle.AssetObject as T);
         }
 
-        /// <summary>加载 TextAsset 的字节（热更 DLL 走这里：.bytes 就是 TextAsset）</summary>
+        /// <summary>加载二进制资源（.bytes / .json 都按 TextAsset 读，返回原始字节）</summary>
         public IEnumerator LoadRawBytes(string location, Action<byte[]> onLoaded, Action<string> onFailed = null)
         {
             if (_package == null)

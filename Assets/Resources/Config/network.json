@@ -7,5 +7,9 @@
     "autoReconnect": true,
     "maxReconnectTimes": 6,
     "reconnectBaseDelay": 1,
-    "requestTimeout": 10
+    "requestTimeout": 10,
+    "transport": 1,
+    "webSocketSecure": false,
+    "webSocketPath": "/",
+    "webSocketUrl": ""
 }

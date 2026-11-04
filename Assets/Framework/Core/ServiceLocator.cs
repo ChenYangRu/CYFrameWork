@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace GameFramework
 {
     /// <summary>
-    /// 轻量服务定位器。框架层服务（网络/资源/UI/热更）都在这里注册，
+    /// 轻量服务定位器。框架层服务（数据/网络/资源/UI/音频）都在这里注册，
     /// 业务层只依赖抽象接口，换实现（例如换网络库）不动业务代码。
-    /// ★ 热更程序集可以取服务，但不能把自己的服务注册进来（否则热更后引用悬空）。
+    /// ★ 业务层可以取服务，但不要把自己的服务注册进来（生命周期归启动器管，避免重复注册/悬空）。
     /// </summary>
     public static class ServiceLocator
     {

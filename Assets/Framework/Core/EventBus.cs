@@ -9,7 +9,7 @@ namespace GameFramework
     /// <summary>
     /// 类型安全的全局事件总线。零反射：Dictionary&lt;Type, Delegate&gt;。
     /// 单个订阅者抛异常不会中断其他订阅者（按 InvocationList 分发）。
-    /// 注意：跨程序集使用后必须 Unsubscribe，否则热更重载后旧委托会成为野指针。
+    /// 注意：跨程序集使用后必须 Unsubscribe，否则对象销毁后旧委托会成为野指针。
     /// </summary>
     public static class EventBus
     {
@@ -62,7 +62,7 @@ namespace GameFramework
             _map.Clear();
         }
 
-        /// <summary>定向清理：热更程序集卸载 / 场景切换时只清掉指定类型的事件</summary>
+        /// <summary>定向清理：场景切换 / 模块卸载时只清掉指定类型的事件</summary>
         public static void Clear<T>()
         {
             _map.Remove(typeof(T));

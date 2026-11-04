@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.code-philosophy.hybridclr": {
-      "version": "file:com.code-philosophy.hybridclr",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.tuyoogame.yooasset": {
       "version": "file:com.tuyoogame.yooasset",
       "depth": 0,

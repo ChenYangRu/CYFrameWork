@@ -2,13 +2,13 @@
     "name": "GameFramework.Runtime",
     "rootNamespace": "GameFramework.Runtime",
     "references": [
+        "GameFramework.Audio",
         "GameFramework.Core",
+        "GameFramework.Data",
         "GameFramework.Network",
         "GameFramework.Resource",
         "GameFramework.UI",
-        "GameFramework.Audio",
-        "YooAsset",
-        "HybridCLR.Runtime"
+        "YooAsset"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

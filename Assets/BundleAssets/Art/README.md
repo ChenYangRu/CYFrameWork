@@ -59,6 +59,6 @@
 
 ## 打包注意
 
-- `Character/` 与 `Effect/` 是**运行时按需加载**的，必须在战斗前预下载（见 `docs/03_热更与打包手册.md`）。
+- `Character/` 与 `Effect/` 是**运行时按需加载**的，必须在战斗前预下载（见 `docs/03_打包与资源更新.md`）。
 - `Scene/` 里 Lightmap 与场景 prefab 必须**同 bundle**，否则移动端加载时会出现"黑场景"。
 - 同一角色的 albedo/normal/ORM 放在同一目录，`PackDirectory` 会把它们打成一个 bundle，减少 IO 次数。

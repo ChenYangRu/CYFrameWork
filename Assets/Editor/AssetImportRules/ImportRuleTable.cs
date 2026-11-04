@@ -48,7 +48,7 @@ namespace GameFramework.EditorTools.ImportRules
     /// 导入规则表：**路径前缀 → 规则**，最长前缀优先。
     ///
     /// 作用范围只有 `Assets/BundleAssets/` 下（见 AssetImportRuleBase.InScope），
-    /// 绝不碰 YooAsset / HybridCLR 包内或工程其它资源。
+    /// 绝不碰 YooAsset 包内或工程其它资源。
     ///
     /// 新增目录的步骤：在 Rules 里加一行 → 同步更新该目录的 README → 跑菜单「按规则重导」。
     /// </summary>

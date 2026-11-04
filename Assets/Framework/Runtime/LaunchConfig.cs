@@ -4,39 +4,62 @@ namespace GameFramework.Runtime
 {
     /// <summary>
     /// 启动配置。来源：Resources/Config/launch.json。
-    /// ★ 三份名单必须与 HybridCLR Settings / YooAsset 收集器保持一致，否则真机必炸：
-    ///   hotUpdateAssemblies  ⊆ HybridCLR "Hot Update Assemblies"
-    ///   aotMetadataAssemblies ⊆ HybridCLR "补充元数据" 列表
+    ///
+    /// ★ 这里**故意只放"启动要什么"**，不放业务开关：
+    ///   业务配置走各自的 Config 文件 / 数据层，别把 launch.json 变成杂物间。
+    ///
+    /// 为什么没有 hotUpdateAssemblies / AOTMetadata 这些字段了：
+    ///   本框架面向小游戏 / WebGL，**不做代码热更**（平台不允许加载外部代码），
+    ///   业务程序集（Game.Business）随包编译进原包；能热更的只有资源（YooAsset）。
     /// </summary>
     [Serializable]
     public class LaunchConfig
     {
-        /// <summary>热更程序集名（不含 .dll），顺序即加载顺序（被依赖的放前面）</summary>
-        public string[] hotUpdateAssemblies = { "Game.HotUpdate" };
+        /// <summary>
+        /// 游戏模式：0 = 离线单机（本地存档为权威数据），1 = 联网（WebSocket，服务端为权威）。
+        /// ★ 这一项决定"要不要启动网络"和"数据写本地还是走服务器"，是本次框架分叉的总开关。
+        /// </summary>
+        public GameMode gameMode = GameMode.Offline;
+
+        /// <summary>编辑器菜单覆盖运行模式的 EditorPrefs 键（-1 = 不覆盖）</summary>
+        public const string EditorGameModeKey = "app.gameMode.override";
+
+        private static int _runtimeGameModeOverride = -1;
 
         /// <summary>
-        /// 需要补充元数据的 AOT 程序集名（不含 .dll）。
-        /// 只列"热更代码引用到、但主包可能被 IL2CPP 裁切"的那些；越小启动越快。
+        /// 由 Bootstrap 在 Awake 里调用（随场景进包，真机生效）。
+        /// 传 UseConfig 表示不覆盖。
         /// </summary>
-        public string[] aotMetadataAssemblies = { "mscorlib", "System", "System.Core" };
+        public static void SetRuntimeGameModeOverride(GameModeOverride mode)
+        {
+            switch (mode)
+            {
+                case GameModeOverride.Offline: _runtimeGameModeOverride = (int)GameMode.Offline; break;
+                case GameModeOverride.Online: _runtimeGameModeOverride = (int)GameMode.Online; break;
+                default: _runtimeGameModeOverride = -1; break;
+            }
+        }
+
+        /// <summary>当前运行时覆盖值（-1 = 无），调试用</summary>
+        public static int RuntimeGameModeOverride { get { return _runtimeGameModeOverride; } }
 
         /// <summary>
-        /// 热更 DLL 在 YooAsset 里的目录前缀。
-        /// 实际 location = {root}/{程序集名}.dll
-        /// （收集器用 AddressByPathInBundleAssets：相对 BundleAssets 的路径，只剥一层扩展名）
+        /// 优先级：Bootstrap(Inspector) &gt; 编辑器菜单(EditorPrefs) &gt; launch.json
+        /// 与资源模式保持同一套规则，避免"两个设置互相打脸"。
         /// </summary>
-        public string hotUpdateLocationRoot = "HotUpdate";
+        public static GameMode ResolveGameMode(GameMode configValue)
+        {
+            if (_runtimeGameModeOverride >= 0 && Enum.IsDefined(typeof(GameMode), _runtimeGameModeOverride))
+                return (GameMode)_runtimeGameModeOverride;
 
-        /// <summary>热更入口类全名</summary>
-        public string entryType = "Game.HotUpdate.GameEntry";
-        /// <summary>热更入口静态方法名（无参）</summary>
-        public string entryMethod = "Start";
+#if UNITY_EDITOR
+            int ov = UnityEditor.EditorPrefs.GetInt(EditorGameModeKey, -1);
+            if (ov >= 0 && Enum.IsDefined(typeof(GameMode), ov))
+                return (GameMode)ov;
+#endif
 
-        /// <summary>补元数据字节放 Resources 下（随包，不可热更——必须与主包 IL2CPP 完全一致）</summary>
-        public string aotMetadataResourceRoot = "AOTMetadata";
-
-        /// <summary>编辑器下跳过补元数据（Mono/JIT 环境不需要）</summary>
-        public bool skipMetadataInEditor = true;
+            return configValue;
+        }
 
         public static LaunchConfig Load()
         {

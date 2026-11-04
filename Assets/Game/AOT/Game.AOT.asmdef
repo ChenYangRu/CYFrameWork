@@ -2,11 +2,12 @@
     "name": "Game.AOT",
     "rootNamespace": "Game.AOT",
     "references": [
+        "Game.Business",
         "GameFramework.Core",
         "GameFramework.Network",
         "GameFramework.Resource",
-        "GameFramework.UI",
         "GameFramework.Runtime",
+        "GameFramework.UI",
         "YooAsset"
     ],
     "includePlatforms": [],

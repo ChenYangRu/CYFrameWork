@@ -49,7 +49,7 @@ namespace GameFramework.Network
         public void Init(NetworkConfig config)
         {
             _cfg = config ?? NetworkConfig.Load();
-            _channel = new TcpChannel();
+            _channel = CreateChannel(_cfg);
             _channel.OnConnected += HandleChannelConnected;
             _channel.OnClosed += HandleChannelClosed;
             _channel.OnPacket += HandleChannelPacket;
@@ -60,6 +60,33 @@ namespace GameFramework.Network
                 loop.OnTick += Tick;
                 _ticking = true;
             }
+        }
+
+        /// <summary>
+        /// 按配置选通道。WebGL / 小游戏没有 BSD socket，即使配成 Tcp 也只能走 WebSocket —— 
+        /// 这里做一次兜底并明确告警，避免"真机连不上但本地好好的"这种排查黑洞。
+        /// </summary>
+        private static INetChannel CreateChannel(NetworkConfig cfg)
+        {
+            if (cfg.transport == TransportType.WebSocket)
+                return new WebSocketChannel(cfg.webSocketSecure, cfg.webSocketPath, cfg.webSocketUrl);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            GameLog.Warn("[Net] 当前平台不支持 TCP，已自动切换为 WebSocket（network.json 的 transport 可改为 1）");
+            return new WebSocketChannel(cfg.webSocketSecure, cfg.webSocketPath, cfg.webSocketUrl);
+#else
+            return new TcpChannel();
+#endif
+        }
+
+        private static string TransportName(NetworkConfig cfg)
+        {
+            if (cfg.transport == TransportType.WebSocket) return cfg.webSocketSecure ? "WebSocket/wss" : "WebSocket/ws";
+#if UNITY_WEBGL && !UNITY_EDITOR
+            return "WebSocket（平台不支持 TCP，已自动切换）";
+#else
+            return "TCP";
+#endif
         }
 
         public void Shutdown()
@@ -83,7 +110,7 @@ namespace GameFramework.Network
 
             _manualClose = false;
             _reconnectAt = -1f;
-            GameLog.Info(string.Format("[Net] 连接 {0}:{1}", _cfg.host, _cfg.port));
+            GameLog.Info(string.Format("[Net] 连接 {0}:{1}（{2}）", _cfg.host, _cfg.port, TransportName(_cfg)));
 
             _channel.Connect(_cfg.host, _cfg.port, _cfg.connectTimeout, delegate (bool ok, string err)
             {

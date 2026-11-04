@@ -1,7 +1,7 @@
 # AssetImportRules · 资源导入规则（自动生效）
 
 > 规则数值的唯一真相源 = `ImportRuleTable.cs`；本文解释"为什么这么定"和"怎么用"。
-> 只管 `Assets/BundleAssets/` 下的资源，**不碰** YooAsset / HybridCLR 包内与工程其它资源。
+> 只管 `Assets/BundleAssets/` 下的资源，**不碰** YooAsset 包内与工程其它资源。
 
 ---
 
@@ -45,7 +45,7 @@
 | `Audio/Bgm/` | 音频 | Streaming + Vorbis q0.7 |
 | `Audio/Sfx/` | 音频 | DecompressOnLoad + q0.5 + **单声道** |
 | `Audio/Voice/` | 音频 | Streaming + q0.5 + 单声道 |
-| `Config/` `Text/` `Shader/` `Video/` `HotUpdate/` | — | 不干预 |
+| `Config/` `Text/` `Shader/` `Video/` | — | 不干预 |
 
 ---
 

@@ -12,7 +12,7 @@ namespace GameFramework.EditorTools
     /// 否则运行时靠 `AutoBoot` 兜底 new 一个，字段全是默认值（UseConfig）。
     ///
     /// 用类型名字符串反射拿 Bootstrap，避免 Editor 程序集反向引用 Game.AOT
-    /// （保持 AOT / 热更程序集之间的引用方向干净）。
+    /// （保持框架层与业务层之间的引用方向干净）。
     /// </summary>
     public static class BootstrapSceneTool
     {

@@ -6,7 +6,7 @@ namespace GameFramework.EditorTools.ImportRules
     /// <summary>
     /// 纹理导入规则。按目录套用 `ImportRuleTable` 的规则，同时写 Android / iOS 两套平台覆盖。
     ///
-    /// 只管 `Assets/BundleAssets/` 下的资源；其它目录（含 YooAsset / HybridCLR 包内）一律不动。
+    /// 只管 `Assets/BundleAssets/` 下的资源；其它目录（含 YooAsset 包内）一律不动。
     ///
     /// 为什么必须设平台覆盖：Editor 默认格式（RGBA32）在真机上会退回未压缩，
     /// 内存直接 ×4 —— 这是移动端爆内存最常见的原因，比包体问题更致命。

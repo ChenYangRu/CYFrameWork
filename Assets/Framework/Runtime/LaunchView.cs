@@ -7,8 +7,8 @@ using UnityEngine.UI;
 namespace GameFramework.Runtime
 {
     /// <summary>
-    /// 启动界面（AOT 侧，必须在热更 DLL 之前就能显示）。
-    /// 只用代码搭 UGUI，不依赖任何美术资源与 prefab——所以"资源还没热更完"也能显示进度。
+    /// 启动界面（框架侧，必须在任何业务代码之前就能显示）。
+    /// 只用代码搭 UGUI，不依赖任何美术资源与 prefab——所以"资源还没更新完"也能显示进度。
     /// </summary>
     public class LaunchView
     {
@@ -105,7 +105,7 @@ namespace GameFramework.Runtime
 
         /// <summary>
         /// 下载前流量确认面板。**AOT 侧必须有**：在移动网络下静默下载几十 MB 是差评来源，
-        /// 而热更 DLL 也在这批下载里，所以这个确认必须先于"加载热更代码"发生。
+        /// 玩家点"拒绝"就等于放弃这次启动，不能静默继续。
         /// </summary>
         private void BuildConfirmPanel()
         {

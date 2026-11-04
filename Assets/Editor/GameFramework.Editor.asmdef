@@ -5,11 +5,10 @@
         "GameFramework.Core",
         "GameFramework.Network",
         "GameFramework.Resource",
-        "GameFramework.UI",
         "GameFramework.Runtime",
+        "GameFramework.UI",
         "YooAsset",
-        "YooAsset.Editor",
-        "HybridCLR.Editor"
+        "YooAsset.Editor"
     ],
     "includePlatforms": [
         "Editor"

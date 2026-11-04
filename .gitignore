@@ -35,14 +35,6 @@
 *.app
 crashlytics-build.properties
 
-# ---------------- HybridCLR ----------------
-HybridCLRData/
-HybridCLRData.meta
-*.dll.mdb
-
-# 热更 DLL 由工具生成，是否入库按需选择（默认不忽略，便于本地验证）
-# Assets/BundleAssets/HotUpdate/*.bytes
-
 # ---------------- YooAsset / CDN ----------------
 CDN/
 Bundles/

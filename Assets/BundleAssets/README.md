@@ -16,7 +16,6 @@
 | `Text/` | 本地化文案表 | 代码里的硬编码文案 |
 | `Shader/` | 自定义 shader、ShaderVariantCollection | 引擎内置 shader 的副本 |
 | `Video/` | 过场 CG、宣传片 | 首包必需的小动画（用序列帧或 Spine） |
-| `HotUpdate/` | 热更程序集 `.dll.bytes` | **任何手工文件**（由工具生成，见下） |
 
 ---
 
@@ -63,7 +62,7 @@
 
 ### 禁止项
 
-- ❌ `.cs` / `.js` / `.dll` 源文件（热更 DLL 只走 `HotUpdate/` 的 `.dll.bytes`）
+- ❌ `.cs` / `.js` / `.dll` 源文件（代码随包发布，资源目录只放资源）
 - ❌ `Editor/` 目录、编辑器专用资源
 - ❌ 原始美术工程（PSD / MA / Blend / ZBrush）
 - ❌ 第三方 Demo、示例场景、测试图
@@ -82,22 +81,11 @@
 | `Art` | `Art/Character`、`Prop`、`Effect`、`Scene` | `hotfix` | CDN 增量，进战斗前预下载 |
 | `Audio` | `Audio/**` | `hotfix` | CDN 增量，按场景预下载 |
 | `Video` | `Video/**` | `hotfix` | 按需点播，**永不预载** |
-| `HotUpdate` | `HotUpdate/**` | `hotfix` | 启动必下载（否则热更不生效） |
 
 > 首包内容 = `builtin` tag 的分组；构建时在 YooAsset 打包面板勾 `Copy Buildin` 才会进 `StreamingAssets`。
 
 ---
 
-## 四、`HotUpdate/` 是工具产物，别手碰
-
-| 项 | 说明 |
-|---|---|
-| 内容 | `Game.HotUpdate.dll.bytes` 等热更程序集 |
-| 生成 | 菜单 `框架/热更/1. 编译热更 DLL → .bytes` |
-| 约束 | 文件名必须与 asmdef 名一致；`.bytes` 后缀不能改 |
-| 手工放入 | 会被下次编译覆盖，且大小/版本不匹配会导致 `Assembly.Load` 失败 |
-
----
 
 ## 五、目录内的 `README.md` 会不会被打进包？
 

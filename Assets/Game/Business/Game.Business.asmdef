@@ -1,0 +1,23 @@
+{
+    "name": "Game.Business",
+    "rootNamespace": "Game.Business",
+    "references": [
+        "GameFramework.Audio",
+        "GameFramework.Core",
+        "GameFramework.Data",
+        "GameFramework.Network",
+        "GameFramework.Resource",
+        "GameFramework.Runtime",
+        "GameFramework.UI",
+        "YooAsset"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

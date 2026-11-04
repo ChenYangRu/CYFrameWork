@@ -13,7 +13,7 @@ namespace GameFramework.EditorTools
     ///
     /// 成熟项目要的是"看 location 就知道文件在哪"：
     ///   `UI/Login/ui_login_panel.prefab`        → `UI/Login/ui_login_panel`
-    ///   `HotUpdate/Game.HotUpdate.dll.bytes`    → `HotUpdate/Game.HotUpdate.dll`（只剥一层 .bytes）
+    ///   `Art/Character/chr_hero.prefab`         → `Art/Character/chr_hero`
     ///   `Art/Character/char_mage_body.fbx`      → `Art/Character/char_mage_body`
     ///
     /// 副作用：**路径即契约**，改目录名 = 改代码里的加载路径。这是有意的——改名必须显式发生。
@@ -29,7 +29,7 @@ namespace GameFramework.EditorTools
             if (path.StartsWith(RootWithSlash))
                 path = path.Substring(RootWithSlash.Length);
 
-            // 只剥一层扩展名：Game.HotUpdate.dll.bytes → Game.HotUpdate.dll
+            // 只剥一层扩展名：xxx.prefab → xxx；xxx.png → xxx
             return Path.ChangeExtension(path, null);
         }
     }

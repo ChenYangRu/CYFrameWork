@@ -17,7 +17,7 @@ MonoBehaviour:
   UniqueBundleName: 0
   Packages:
   - PackageName: GamePackage
-    PackageDesc: 
+    PackageDesc: "\u6E38\u620F\u4E3B\u8D44\u6E90\u5305\uFF08\u7531\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF09"
     EnableAddressable: 0
     SupportExtensionless: 1
     LocationToLower: 0
@@ -180,19 +180,6 @@ MonoBehaviour:
       Collectors:
       - CollectPath: Assets/BundleAssets/Video
         CollectorGUID: e065bbd396835c9429ad289d97418bbb
-        CollectorType: 0
-        AddressRuleName: AddressByPathInBundleAssets
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: hotfix
-        UserData: 
-    - GroupName: HotUpdate
-      GroupDesc: "\u6846\u67B6\u81EA\u52A8\u521B\u5EFA\uFF08\u89C1 BundleAssets/README.md\uFF09"
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/BundleAssets/HotUpdate
-        CollectorGUID: 8e5c7887c8ec86445a7288f058b65a11
         CollectorType: 0
         AddressRuleName: AddressByPathInBundleAssets
         PackRuleName: PackDirectory
